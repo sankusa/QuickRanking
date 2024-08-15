@@ -431,6 +431,7 @@ MonoBehaviour:
   _id: 
   _canvasGroup: {fileID: 3096463465019615443}
   _graphicRaycaster: {fileID: 3096463465019615442}
+  _rankingNameText: {fileID: 5339261024575178047}
   _rankingListView: {fileID: 3096463466182428378}
   _playerRankingRowView: {fileID: 21443872670896129}
   _currentScoreText: {fileID: 6152039772943961743}
@@ -2765,7 +2766,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 951580337355926432, guid: 7a6c6eaeb722b3c40a25c04dbd3d0274, type: 3}
       propertyPath: m_Text
-      value: "100\u56DE"
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 951580337355926432, guid: 7a6c6eaeb722b3c40a25c04dbd3d0274, type: 3}
       propertyPath: m_FontData.m_FontSize
@@ -3252,6 +3253,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd2c06c269ca11143b4f16caa482efed, type: 3}
+--- !u!114 &5339261024575178047 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8882214750847553295, guid: fd2c06c269ca11143b4f16caa482efed, type: 3}
+  m_PrefabInstance: {fileID: 3556483461560961584}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1458be24e81626b45b832cf554ceb2ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6206824961402125314 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7455771544703350322, guid: fd2c06c269ca11143b4f16caa482efed, type: 3}
@@ -3389,9 +3401,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3096463465292030297}
     m_Modifications:
+    - target: {fileID: 292463199012456195, guid: db855db836ffa7c4cbef6f6642345ca2, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2349356104168297661, guid: db855db836ffa7c4cbef6f6642345ca2, type: 3}
       propertyPath: m_Name
       value: InputField (Legacy)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2367512767008696352, guid: db855db836ffa7c4cbef6f6642345ca2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5429857428910212422, guid: db855db836ffa7c4cbef6f6642345ca2, type: 3}
+      propertyPath: m_Text
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5899226417234533864, guid: db855db836ffa7c4cbef6f6642345ca2, type: 3}
       propertyPath: m_Pivot.x
@@ -3508,7 +3532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 951580337355926432, guid: 7a6c6eaeb722b3c40a25c04dbd3d0274, type: 3}
       propertyPath: m_Text
-      value: "100\u56DE"
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 951580337355926432, guid: 7a6c6eaeb722b3c40a25c04dbd3d0274, type: 3}
       propertyPath: m_FontData.m_FontSize

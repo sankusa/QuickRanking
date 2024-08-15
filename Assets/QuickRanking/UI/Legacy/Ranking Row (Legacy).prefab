@@ -95,7 +95,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 951580337355926432, guid: 7a6c6eaeb722b3c40a25c04dbd3d0274, type: 3}
       propertyPath: m_Text
-      value: "\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042\u3042"
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6845170265796685253, guid: 7a6c6eaeb722b3c40a25c04dbd3d0274, type: 3}
       propertyPath: m_Pivot.x
@@ -212,7 +212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 951580337355926432, guid: 7a6c6eaeb722b3c40a25c04dbd3d0274, type: 3}
       propertyPath: m_Text
-      value: 100
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6845170265796685253, guid: 7a6c6eaeb722b3c40a25c04dbd3d0274, type: 3}
       propertyPath: m_Pivot.x
@@ -329,7 +329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 951580337355926432, guid: 7a6c6eaeb722b3c40a25c04dbd3d0274, type: 3}
       propertyPath: m_Text
-      value: 100000.000
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6845170265796685253, guid: 7a6c6eaeb722b3c40a25c04dbd3d0274, type: 3}
       propertyPath: m_Pivot.x
