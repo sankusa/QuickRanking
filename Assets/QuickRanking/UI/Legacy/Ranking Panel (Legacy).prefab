@@ -3627,6 +3627,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3096463466292889987}
     m_Modifications:
+    - target: {fileID: 1708856544852666516, guid: 54dd4e4a26bfd9c44bb683f674ac5b25, type: 3}
+      propertyPath: m_Text
+      value: "\u3042\u306A\u305F"
+      objectReference: {fileID: 0}
     - target: {fileID: 1793004068097515360, guid: 54dd4e4a26bfd9c44bb683f674ac5b25, type: 3}
       propertyPath: m_Name
       value: Caption Text (Legacy)
@@ -3846,6 +3850,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4814489081329480340}
     m_Modifications:
+    - target: {fileID: 1708856544852666516, guid: 54dd4e4a26bfd9c44bb683f674ac5b25, type: 3}
+      propertyPath: m_Text
+      value: "\u30CF\u30A4\u30B9\u30B3\u30A2"
+      objectReference: {fileID: 0}
     - target: {fileID: 1793004068097515360, guid: 54dd4e4a26bfd9c44bb683f674ac5b25, type: 3}
       propertyPath: m_Name
       value: HighScore Caption Text (Legacy)
