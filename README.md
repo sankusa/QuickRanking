@@ -42,12 +42,16 @@ GitHubのReleaseからQuickRanking.unitypackageをダウンロード、Unityプ�
 　※[OrderBy]・[DecimalDigits]はPlayfabとスコアを送受信する際にスコアの加工に使用するので、データの整合性を保つため後からの変更はしないでください  
 
 3.RankingPanelをシーンに配置  
-・LegacyText版を使う場合  
-　[Assets/QuickRanking/UI/Legacy/RankingPanel (Legacy)]をシーンに配置  
-・TextMeshPro版を使う場合  
-　使用する日本語フォントのFontAssetを作成し、RankingPanelと同じフォルダのText (TMP)のTextMeshProコンポーネントにアタッチ
-　[Assets/QuickRanking/UI/TMP/RankingPanel (TMP)]をシーンに配置  
+◆LegacyText版を使う場合  
+　・(WebGL向けビルドの場合のみ) デフォルトのフォントでは日本語が表示できないため、日本語が表示できるフォントをRankingPanelと同じフォルダのText (Legacy)のFontにアタッチ  
+　・[Assets/QuickRanking/UI/Legacy/RankingPanel (Legacy)]をシーンに配置  
+ <br>
+◆TextMeshPro版を使う場合  
+　・使用する日本語フォントのFontAssetを作成し、RankingPanelと同じフォルダのText (TMP)のTextMeshProコンポーネントにアタッチ
+　・[Assets/QuickRanking/UI/TMP/RankingPanel (TMP)]をシーンに配置  
+<br>
 
+※EventSystemがシーン上にない場合は配置
 <br>
 
 ### 呼び出し
