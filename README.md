@@ -4,6 +4,9 @@ Unityでランキング機能を実装することができます
 
 ![image](https://github.com/user-attachments/assets/59ef0f17-8742-4df9-b9d8-5eaee7ab1990)
 
+## 動作環境
+Unity2021.3.42f1、Unity2022.3.32fで動作を確認
+
 ## 使用方法
 ### PlayFabの導入
 1.下記の公式ページなどを参考にアカウントを作成～タイトルを作成  
