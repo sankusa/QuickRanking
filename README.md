@@ -1,5 +1,5 @@
 # QuickRanking
-Unityにランキング機能をなるべく簡単に実装できるようにしたライブラリ  
+Unityでランキング機能を実装することができます  
 バックエンドにはPlayFabを利用しています  
 
 ![image](https://github.com/user-attachments/assets/59ef0f17-8742-4df9-b9d8-5eaee7ab1990)
