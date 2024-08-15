@@ -3163,6 +3163,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3096463465755251198}
     m_Modifications:
+    - target: {fileID: 3797211678605193303, guid: fd2c06c269ca11143b4f16caa482efed, type: 3}
+      propertyPath: m_Text
+      value: "\u30E9\u30F3\u30AD\u30F3\u30B0"
+      objectReference: {fileID: 0}
     - target: {fileID: 4316545955931948963, guid: fd2c06c269ca11143b4f16caa482efed, type: 3}
       propertyPath: m_Name
       value: Title Text (Legacy)

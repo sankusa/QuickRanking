@@ -2898,6 +2898,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 4421856886548907646}
     m_Modifications:
     - target: {fileID: 1883075728595968001, guid: 0e8be90b98468b243adfec47e25cd883, type: 3}
+      propertyPath: m_text
+      value: "\u30E9\u30F3\u30AD\u30F3\u30B0"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883075728595968001, guid: 0e8be90b98468b243adfec47e25cd883, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
