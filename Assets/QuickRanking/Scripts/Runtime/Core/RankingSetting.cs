@@ -15,6 +15,9 @@ namespace QuickRanking.Core {
         [SerializeField] private string _rankingId;
         public string RankingId => _rankingId;
 
+        [SerializeField] private string _rankingName;
+        public string RankingName => _rankingName;
+
         [SerializeField] private string _scoreSaveKey = Guid.NewGuid().ToString("N");
         public string ScoreSaveKey => _scoreSaveKey;
 

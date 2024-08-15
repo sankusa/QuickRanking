@@ -16,6 +16,8 @@ namespace QuickRanking.UI {
         [SerializeField] private CanvasGroup _canvasGroup;
         [SerializeField] private GraphicRaycaster _graphicRaycaster;
 
+        [SerializeField] private AbstractText _rankingNameText;
+
         [SerializeField] private RankingListView _rankingListView;
         [SerializeField] private RankingRowView _playerRankingRowView;
         [SerializeField] private AbstractText _currentScoreText;
@@ -248,6 +250,8 @@ namespace QuickRanking.UI {
         }
 
         private void Repaint() {
+            _rankingNameText.SetText(_rankingSetting.RankingName);
+
             _currentScoreText.SetText(_currentScore == null ? "----" : _currentScore.GenerateScoreText());
             _highScoreText.SetText(_highScore == null ? "----" : _highScore.GenerateScoreText());
 
