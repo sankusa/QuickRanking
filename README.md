@@ -1,25 +1,29 @@
 # QuickRanking
-ランキング機能を簡単に実装できるライブラリ
-バックエンドにはPlayFabを採用しています
+Unityにランキング機能をなるべく簡単に実装できるようにしたライブラリ  
+バックエンドにはPlayFabを利用しています  
+
+![image](https://github.com/user-attachments/assets/59ef0f17-8742-4df9-b9d8-5eaee7ab1990)
 
 ## 使用方法
-## PlayFabの導入
+### PlayFabの導入
 1.下記の公式ページなどを参考にアカウントを作成～タイトルを作成  
 [クイックスタート: ゲーム マネージャー](https://learn.microsoft.com/ja-jp/gaming/playfab/gamemanager/quickstart)  
 
-2.クライアントからのデータ更新を許可
+2.クライアントからのデータ更新を許可  
 タイトル管理画面→[Settings]→[API Features]→[Allow client to post player statistics]にチェック→[Save]  
 
-3.プレイヤー名の重複を許可(必要なら)
+3.プレイヤー名の重複を許可(必要なら)  
 [Settings]→[General]→[Allow non-unique player names]にチェック→[Save]
 
-4.LeaderBoardの作成
+4.LeaderBoardの作成  
 [LeaderBoard]→[New LeaderBoard]→ランキング名を入力して[Save]
 
 5.下記の公式ページを参考にUnityプロジェクトにSDKをインポート、タイトル設定を行う  
 [クイックスタート: Unity の C# 用の PlayFab クライアント ライブラリ](https://learn.microsoft.com/ja-jp/gaming/playfab/sdks/unity3d/quickstart)  
 
-## QuickRankingの導入
+<br>
+
+### QuickRankingの導入
 1.unitypackageのインポート  
 GitHubのReleaseからQuickRanking.unitypackageをダウンロード、Unityプロジェクトにインポート  
 
@@ -36,8 +40,10 @@ GitHubのReleaseからQuickRanking.unitypackageをダウンロード、Unityプ�
 [Assets/QuickRanking/UI/TMP/RankingPanel (TMP)]をシーンに配置  
 TMPの場合は使用する日本語フォントのFontAssetを作成し、RankingPanelと同じフォルダのText (TMP)のTextMeshProコンポーネントにアタッチしてください  
 
-## 呼び出し
+<br>
+
+### 呼び出し
 ```
 QuickRanking.Facade.CallRanking(スコア);
 ```
-![image](https://github.com/user-attachments/assets/59ef0f17-8742-4df9-b9d8-5eaee7ab1990)
+
