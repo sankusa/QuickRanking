@@ -188,11 +188,16 @@ namespace QuickRanking.Playfab {
             if(error != null) {
                 return (GeneratePlayfabErrorMessage(error), null);
             }
+            
+            if(result.Leaderboard.Count == 0) {
+                return (null, null);
+            }
 
-            // レコードが登録されていなくても生成されて帰ってくる(サーバ側には登録されない)ので0件になることはない
             PlayerLeaderboardEntry entry = result.Leaderboard[0];
             RankingRow playerRankingRow = null;
-            // 登録済かどうかをDisplayNameで判断
+
+            // レコードが登録されていなくても生成されて帰ってくる(サーバ側には登録されない)場合がある
+            // 登録済かどうかをDisplayNameで判断(Playfabはプレイヤー名3文字以上の制限がある)
             if(string.IsNullOrEmpty(entry.DisplayName) == false) {
                 playerRankingRow = new RankingRow(entry.Position + 1, entry.PlayFabId, entry.DisplayName, DecodeScore(rankingSetting, entry.StatValue));
             }
