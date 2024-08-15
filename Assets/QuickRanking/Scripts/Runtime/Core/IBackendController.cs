@@ -26,6 +26,6 @@ namespace QuickRanking.Core {
 
         /// <summary>送信したデータの反映を待機</summary>
         /// <returns>エラーメッセージ,タイムアウト</returns>
-        Task<(string errorMessage, bool timeout)> WaitForPlayerRowReflection(string displayName, RankingScore highScore, float timeLimit, CancellationToken cancellationToken);
+        Task<(string errorMessage, bool timeout)> WaitForPlayerRowReflectionAsync(string displayName, RankingScore highScore, float timeLimit, CancellationToken cancellationToken);
     }
 }

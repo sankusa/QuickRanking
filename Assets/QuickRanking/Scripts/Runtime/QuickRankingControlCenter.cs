@@ -61,8 +61,8 @@ namespace QuickRanking {
             return result;
         }
 
-        public async Task<(string errorMessage, bool timeout)> WaitForPlayerRowReflection(string displayName, RankingScore highScore, CancellationToken cancellationToken = default) {
-            return await _backendController.WaitForPlayerRowReflection(displayName, highScore, _quickRankingSetting.DataReflectionWaitTimeLimit, cancellationToken);
+        public async Task<(string errorMessage, bool timeout)> WaitForPlayerRowReflectionAsync(string displayName, RankingScore highScore, CancellationToken cancellationToken = default) {
+            return await _backendController.WaitForPlayerRowReflectionAsync(displayName, highScore, _quickRankingSetting.DataReflectionWaitTimeLimit, cancellationToken);
         }
     }
 }

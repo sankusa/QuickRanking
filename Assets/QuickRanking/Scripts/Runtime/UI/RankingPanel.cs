@@ -117,46 +117,43 @@ namespace QuickRanking.UI {
 
             _isRequestingCounter++;
 
-            bool success = true;
-
+            // 送信
             if(_playerRankingRow == null || _nameInputField.GetText() != _playerRankingRow.DisplayName) {
-                success &= await UploadDisplayNameAsync();
+                bool uploadDisplayNameSuccess = await UploadDisplayNameAsync();
+                if(uploadDisplayNameSuccess == false) goto End;
             }
-
             if(_playerRankingRow == null || _highScore.IsBetterScoreThan(_playerRankingRow.Score)) {
-                success &= await UploadHighScoreAsync();
+                bool uploadHighScoreAsyncSuccess = await UploadHighScoreAsync();
+                if(uploadHighScoreAsyncSuccess == false) goto End;
             }
 
-            bool waitReflectionTimeout = false;
-            if(success) {
-                var result = await QuickRankingControlCenter.Instance.WaitForPlayerRowReflection(_nameInputField.GetText(), _highScore, _cancellationToken);
-                bool success2 = result.errorMessage == null;
-                if(success2 == false) {
-                    _messageText.SetText(result.errorMessage);
-                    Debug.LogWarning(result.errorMessage);
-                }
-                waitReflectionTimeout = result.timeout;
+            // データ反映待機
+            var result = await QuickRankingControlCenter.Instance.WaitForPlayerRowReflectionAsync(_nameInputField.GetText(), _highScore, _cancellationToken);
+            bool waitForPlayerRowReflectionSuccess = result.errorMessage == null;
+            if(waitForPlayerRowReflectionSuccess == false) {
+                _messageText.SetText("通信エラー");
+                Debug.LogWarning(result.errorMessage);
+                goto End;
+            }
+            bool waitReflectionTimeout = result.timeout;
 
-                success &= success2;
+            // リフレッシュ
+            bool refleshSuccess = await RefleshAsync();
+            if(refleshSuccess == false) goto End;
+
+            // メッセージ設定
+            if(waitReflectionTimeout) {
+                _messageText.SetText("送信成功 ・・・ 反映に時間がかかっています");
+            }
+            else {
+                _messageText.SetText("送信成功");
             }
 
-            if(success) {
-                await RefleshAsync();
-            }
-
+        End:
             _isRequestingCounter--;
-
-            if(success) {
-                if(waitReflectionTimeout) {
-                    _messageText.SetText("送信成功 ・・・ 反映に時間がかかっています");
-                }
-                else {
-                    _messageText.SetText("送信成功");
-                }
-            }
         }
 
-        public async Task RefleshAsync() {
+        public async Task<bool> RefleshAsync() {
             _cancellationToken.ThrowIfCancellationRequested();
 
             _isRequestingCounter++;
@@ -172,6 +169,8 @@ namespace QuickRanking.UI {
             }
 
             Repaint();
+
+            return success;
         }
 
         private async Task<bool> UploadDisplayNameAsync() {
@@ -182,7 +181,7 @@ namespace QuickRanking.UI {
             string errorMessage = await QuickRankingControlCenter.Instance.SendDisplayNameAsync(_nameInputField.GetText(), _cancellationToken);
             bool success = errorMessage == null;
             if(success == false) {
-                _messageText.SetText(errorMessage);
+                _messageText.SetText("通信エラー");
                 Debug.LogWarning(errorMessage);
             }
 
@@ -199,7 +198,7 @@ namespace QuickRanking.UI {
             string errorMessage = await QuickRankingControlCenter.Instance.SendScoreAsync(_currentScore, _cancellationToken);
             bool success = errorMessage == null;
             if(success == false) {
-                _messageText.SetText(errorMessage);
+                _messageText.SetText("通信エラー");
                 Debug.LogWarning(errorMessage);
             }
 
@@ -219,7 +218,7 @@ namespace QuickRanking.UI {
                 _ranking = rankingResult.ranking;
             }
             else {
-                _messageText.SetText(rankingResult.errorMessage);
+                _messageText.SetText("通信エラー");
                 Debug.LogWarning(rankingResult.errorMessage);
             }
 
@@ -239,7 +238,7 @@ namespace QuickRanking.UI {
                 _playerRankingRow = playerRecordResult.playerRow;
             }
             else {
-                _messageText.SetText(playerRecordResult.errorMessage);
+                _messageText.SetText("通信エラー");
                 Debug.LogWarning(playerRecordResult.errorMessage);
             }
 

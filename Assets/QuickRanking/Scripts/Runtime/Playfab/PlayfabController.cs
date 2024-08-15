@@ -55,7 +55,7 @@ namespace QuickRanking.Playfab {
             await TaskUtil.WaitUntil(() => result != null || error != null, cancellationToken);
 
             if(error != null) {
-                return error.ErrorMessage;
+                return GeneratePlayfabErrorMessage(error);
             }
 
             return null;
@@ -90,7 +90,7 @@ namespace QuickRanking.Playfab {
             await TaskUtil.WaitUntil(() => result != null || error != null, cancellationToken);
 
             if(error != null) {
-                return error.ErrorMessage;
+                return GeneratePlayfabErrorMessage(error);
             }
 
             return null;
@@ -122,7 +122,7 @@ namespace QuickRanking.Playfab {
             await TaskUtil.WaitUntil(() => result != null || error != null, cancellationToken);
 
             if(error != null) {
-                return error.ErrorMessage;
+                return GeneratePlayfabErrorMessage(error);
             }
 
             return null;
@@ -160,7 +160,7 @@ namespace QuickRanking.Playfab {
             await TaskUtil.WaitUntil(() => result != null || error != null, cancellationToken);
 
             if(error != null) {
-                return (error.ErrorMessage, null);
+                return (GeneratePlayfabErrorMessage(error), null);
             }
 
             return (null, result);
@@ -186,7 +186,7 @@ namespace QuickRanking.Playfab {
             await TaskUtil.WaitUntil(() => result != null || error != null, cancellationToken);
 
             if(error != null) {
-                return (error.ErrorMessage, null);
+                return (GeneratePlayfabErrorMessage(error), null);
             }
 
             // レコードが登録されていなくても生成されて帰ってくる(サーバ側には登録されない)ので0件になることはない
@@ -200,7 +200,7 @@ namespace QuickRanking.Playfab {
             return (null, playerRankingRow);
         }
 
-        public async Task<(string errorMessage, bool timeout)> WaitForPlayerRowReflection(string displayName, RankingScore highScore, float timeLimit, CancellationToken cancellationToken) {
+        public async Task<(string errorMessage, bool timeout)> WaitForPlayerRowReflectionAsync(string displayName, RankingScore highScore, float timeLimit, CancellationToken cancellationToken) {
             cancellationToken.ThrowIfCancellationRequested();
 
             float startTime = Time.time;
@@ -220,6 +220,10 @@ namespace QuickRanking.Playfab {
                     return (null, true);
                 }
             }
+        }
+
+        private string GeneratePlayfabErrorMessage(PlayFabError error) {
+            return $"Playfab Error : ErrorCode = {error.Error}({((int)error.Error).ToString()}) : {error.ErrorMessage}";
         }
     }
 }
