@@ -17,4 +17,4 @@ MonoBehaviour:
   _orderBy: 0
   _scorePrefix: 
   _scoreSuffix: 
-  _decimalDigits: 2
+  _decimalDigits: 0
