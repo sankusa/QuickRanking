@@ -138,9 +138,9 @@ namespace QuickRanking.UI {
                 waitReflectionTimeout = result.timeout;
 
                 success &= success2;
-            }
 
-            await RefleshAsync();
+                await RefleshAsync();
+            }
 
             _isRequestingCounter--;
 
