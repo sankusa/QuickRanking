@@ -31,14 +31,19 @@ GitHubのReleaseからQuickRanking.unitypackageをダウンロード、Unityプ�
 [Assets/QuickRanking/Resources/RankingSetting 1.asset]  
 ・RankingIdにPlayfabで作成したLeaderBoard名を入力  
 ・必要に応じてその他の項目を設定  
-※OrderBy、DecimalDigitは設定値を使用してPlayfabと送受信するスコアを加工するため、データの整合性を保つため後からの変更はしないでください  
+　[RankingName]・・・ランキングパネルにタイトルとして表示されるランキング名  
+　[OrderBy]・・・降順/昇順  
+　[ScorePrefix]・・・スコア表示時に先頭に加える文字列  
+　[ScoreSuffix]・・・スコア表示時に末尾に加える文字列  
+　[DecimalDigits]・・・小数桁数  
+　※[OrderBy]・[DecimalDigits]はPlayfabとスコアを送受信する際にスコアの加工に使用するので、データの整合性を保つため後からの変更はしないでください  
 
 3.RankingPanelをシーンに配置  
 ・LegacyText版を使う場合  
-[Assets/QuickRanking/UI/Legacy/RankingPanel (Legacy)]をシーンに配置  
+　[Assets/QuickRanking/UI/Legacy/RankingPanel (Legacy)]をシーンに配置  
 ・TextMeshPro版を使う場合  
-[Assets/QuickRanking/UI/TMP/RankingPanel (TMP)]をシーンに配置  
-TMPの場合は使用する日本語フォントのFontAssetを作成し、RankingPanelと同じフォルダのText (TMP)のTextMeshProコンポーネントにアタッチしてください  
+　使用する日本語フォントのFontAssetを作成し、RankingPanelと同じフォルダのText (TMP)のTextMeshProコンポーネントにアタッチ
+　[Assets/QuickRanking/UI/TMP/RankingPanel (TMP)]をシーンに配置  
 
 <br>
 
