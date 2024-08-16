@@ -5,7 +5,11 @@ Unityでランキング機能を実装することができます
 ![image](https://github.com/user-attachments/assets/59ef0f17-8742-4df9-b9d8-5eaee7ab1990)
 
 ## 動作環境
-Unity2021.3.42f1、Unity2022.3.32fで動作を確認
+Unity2022.3以上  
+
+※Unity2021.3でも、Playfabとの通信時に以下のエラーが出る場合がありますが、一応動作はしました  
+[A Native Collection has not been disposed, resulting in a memory leak. Enable Full StackTraces to get more details.]  
+このエラーは無視しても問題ないという意見もあるようなのですが、詳細は未調査です  
 
 ## 使用方法
 ### PlayFabの導入
